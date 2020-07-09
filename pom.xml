@@ -43,6 +43,20 @@
     </dependency>
 
     <dependency>
+    	<groupId>org.springframework.data</groupId>
+    	<artifactId>spring-data-mongodb</artifactId>
+    	<version>3.0.1.RELEASE</version>
+    </dependency>
+    
+    <dependency>
+	    <groupId>org.springframework.data</groupId>
+	    <artifactId>spring-data-releasetrain</artifactId>
+	    <version>Lovelace-SR9</version>
+	    <type>pom</type>
+	    <scope>import</scope>
+	</dependency>
+
+    <dependency>
       <groupId>org.modelmapper</groupId>
       <artifactId>modelmapper</artifactId>
       <version>2.3.5</version>
@@ -87,7 +101,6 @@
       <scope>test</scope>
     </dependency>
 
-<!--    Below causes MongoDB to activate for some reason. Works for now, but need to look into it -->
     <dependency>
       <groupId>com.relevantcodes</groupId>
       <artifactId>extentreports</artifactId>
@@ -123,7 +136,6 @@
       <artifactId>guava</artifactId>
       <version>23.0</version>
     </dependency>
-
   </dependencies>
 
   <repositories>

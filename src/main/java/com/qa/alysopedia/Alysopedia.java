@@ -9,5 +9,4 @@ public class Alysopedia {
 	public static void main(String[] args) {
 		SpringApplication.run(Alysopedia.class);
 	}
-
 }
