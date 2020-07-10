@@ -4,5 +4,7 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 
-public interface WikiRepository extends MongoRepository<Wiki, String> {
+import com.qa.alysopedia.model.Wiki;
+
+public interface WikiRepository extends MongoRepository<Wiki, Integer> {
 }
