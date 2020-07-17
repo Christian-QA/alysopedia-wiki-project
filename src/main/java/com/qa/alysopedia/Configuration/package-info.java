@@ -1,1 +1,1 @@
-package com.qa.alysopedia.Configuration;
+package com.qa.alysopedia.configuration;

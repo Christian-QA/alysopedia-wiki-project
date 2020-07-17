@@ -1,4 +1,4 @@
-package com.qa.alysopedia.Configuration;
+package com.qa.alysopedia.configuration;
 
 import java.net.UnknownHostException;
 
@@ -8,7 +8,6 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 import com.mongodb.MongoClient;
-
 
 @Configuration
 @EnableMongoRepositories(basePackages = "com.qa.alysopedia.repository")

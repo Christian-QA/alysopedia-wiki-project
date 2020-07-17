@@ -14,8 +14,5 @@ public class Wiki {
 	private int id;
 	private String title;
 	private String category;
-	
-	
-	
-	
+			
 }
