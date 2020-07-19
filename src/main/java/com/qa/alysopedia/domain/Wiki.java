@@ -1,4 +1,4 @@
-package com.qa.alysopedia.model;
+package com.qa.alysopedia.domain;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -11,7 +11,7 @@ import lombok.Data;
 public class Wiki {
 
 	@Id
-	private int id;
+	private Long id;
 	private String title;
 	private String category;
 			

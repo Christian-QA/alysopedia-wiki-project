@@ -1,46 +1,57 @@
 package com.qa.alysopedia.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.qa.alysopedia.model.Wiki;
-import com.qa.alysopedia.repository.WikiRepository;
+import com.qa.alysopedia.domain.Wiki;
+import com.qa.alysopedia.dto.WikiDTO;
+import com.qa.alysopedia.service.WikiService;
 
 @RestController
 public class WikiController {
 	
+	private final WikiService service;
+	
 	@Autowired
-	private WikiRepository repository;
+	public WikiController(WikiService service) {
+		this.service = service;
+	}
 	
 	@PostMapping("/addWiki")
-	public String saveWiki(@RequestBody Wiki wiki) {
-		repository.save(wiki);
-		return "Wiki page added with the name: " + wiki.getTitle() + ",\n with the id " + wiki.getId();
+	public ResponseEntity<WikiDTO> createWiki(@RequestBody Wiki wiki) {
+		return new ResponseEntity<>(this.service.createWiki(wiki),HttpStatus.CREATED);
 	}
 	
 	@GetMapping("/findAllWiki")
-	public List<Wiki> getWikis() {
-		return repository.findAll();
+	public ResponseEntity<List<WikiDTO>> getAllWiki() {
+		return ResponseEntity.ok(this.service.readWiki());
+	}
+	
+	@GetMapping("/findAllWiki/{id}")
+	public ResponseEntity<WikiDTO> getWikiById(@PathVariable Long id) {
+		return ResponseEntity.ok(this.service.findWikiById(id));
 	}
 
-	@GetMapping("/findAllWiki/{id}")
-	public Optional<Wiki> getWiki(@PathVariable int id) {
-		return repository.findById(id);
+	@PutMapping("/updateWiki/{id}")
+	public ResponseEntity<WikiDTO> updateWiki(@PathVariable Long id, @RequestBody Wiki wiki) {
+		return ResponseEntity.ok(this.service.updateWiki(id, wiki));
 	}
 	
 	@DeleteMapping("/deleteWiki/{id}")
-	public String deleteWiki(@PathVariable int id) {
-		repository.deleteById(id);
-		return "Wiki page deleted with the name: " + id;
+	public ResponseEntity<?> deleteCharacter(@PathVariable Long id) {
+		return this.service.deleteWiki(id)
+			? ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build()
+			: ResponseEntity.noContent().build();
 	}
+	
 }
