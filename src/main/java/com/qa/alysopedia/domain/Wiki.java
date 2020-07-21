@@ -10,9 +10,9 @@ import lombok.Data;
 @Document(collection = "wiki")
 public class Wiki {
 
-	@Id
-	private Long id;
 	private String title;
 	private String category;
+	private String author;
+	private String body;
 			
 }

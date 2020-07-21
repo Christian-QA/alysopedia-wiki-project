@@ -9,9 +9,9 @@ import lombok.Data;
 @Transactional
 public class WikiDTO {
 
-	@Id
-	private Long id;
 	private String title;
 	private String category;
+	private String author;
+	private String body;
 	
 }
