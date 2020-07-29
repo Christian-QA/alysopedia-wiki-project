@@ -37,11 +37,21 @@ public class WikiController {
 		return ResponseEntity.ok(this.service.readWiki());
 	}
 	
-	@GetMapping("/findAllWiki/{id}")
+	@GetMapping("/readWikiById/{id}")
 	public ResponseEntity<WikiDTO> getWikiById(@PathVariable Long id) {
 		return ResponseEntity.ok(this.service.findWikiById(id));
 	}
 
+    @GetMapping("/readWikiByName/{title}")
+    public ResponseEntity<List<WikiDTO>> findWikiByName(@PathVariable String title){
+        return ResponseEntity.ok(this.service.findWikiByTitle (title));
+    }
+
+    @GetMapping("/readWikiByCategory/{category}")
+    public ResponseEntity<List<WikiDTO>> findWikiByCategory(@PathVariable String category){
+        return ResponseEntity.ok(this.service.findWikiByCategory (category));
+    }
+	
 	@PutMapping("/updateWiki/{id}")
 	public ResponseEntity<WikiDTO> updateWiki(@PathVariable Long id, @RequestBody Wiki wiki) {
 		return ResponseEntity.ok(this.service.updateWiki(id, wiki));
@@ -53,5 +63,4 @@ public class WikiController {
 			? ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build()
 			: ResponseEntity.noContent().build();
 	}
-	
 }
