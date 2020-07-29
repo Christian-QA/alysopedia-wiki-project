@@ -7,20 +7,16 @@ Taking onboard our QA Academy training - this is a post-academy self assigned an
 This first phase is intended to be an admin managed game wiki app to provide and manage a database of additional information and lore for the future game **Alysia Is Mine**.
 
 ## Table of Contents
-
 1. [About the Project](#about-the-project)
 1. [Project Status](#project-status)
-
 1. [Getting Started](#getting-started)
     1. [Getting the Source](#getting-the-source)
     1. [Dependencies](#dependencies)
     1. [Building](#building)
-     <!-- 1. [Installation](#installation)-->
     1. [Usage](#usage)
 1. [Release Process](#release-process)
     1. [Versioning](#versioning)
-<!--1. [Further Reading](#further-reading)-->
-
+1. [Further Reading](#further-reading)
 1. [Contributing](#contributing)
 1. [How to Get Help](#how-to-get-help)
 1. [License](#license)
@@ -219,11 +215,14 @@ There are currently no time contraints set on this project.
 We use [SemVer](http://semver.org/) for versioning. For a list of available versions, see the [repository tag list](https://github.com/Christian-QA/alysopedia-wiki-project/tags).
 
 **[Back to top](#table-of-contents)**
-<!--
+
 ## Further Reading
+- Placeholder text
+- difjoif
+- dfiqjo
 
 **[Back to top](#table-of-contents)**
--->
+
 ## Contributing
 
 Currently we are not accepting contributions due to the nature of this project being part of our continuted learning.
