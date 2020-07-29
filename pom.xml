@@ -58,6 +58,11 @@
 	      <groupId>org.hibernate</groupId>
 	      <artifactId>hibernate-core</artifactId>
 	    </dependency>
+
+		<dependency>
+      		<groupId>com.stripe</groupId>
+      		<artifactId>stripe-java</artifactId>
+    	</dependency>
 	</dependencies>
 
 	<build>
