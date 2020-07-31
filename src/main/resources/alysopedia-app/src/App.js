@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
+import {
+  BrowserRouter,
+  Route,
+  Switch
+} from "react-router-dom";
 import './App.css';
-import './Wiki.js';
+import Home from './pages/Home';
+import Wiki from './pages/Wiki';
+import About from './pages/About';
+import Error from './pages/Error';
+import Navigation from './pages/Navigation';
+//import User from './components/About';
 
-
+/*
 function App() {
   return (
     <div className="App">
@@ -35,5 +45,24 @@ function App() {
     </div>
   );
 }
+*/
 
+class App extends Component {
+  render() {
+    return (      
+       <BrowserRouter>
+        <div>
+          <Navigation />
+            <Switch>
+             <Route path="/" component={Home} exact/>
+             <Route path="/Wiki" component={Wiki}/>
+             <Route path="/About" component={About}/>
+             <Route component={Error}/>
+           </Switch>    
+        </div> 
+      </BrowserRouter>
+    );
+  }
+}
+ 
 export default App;
