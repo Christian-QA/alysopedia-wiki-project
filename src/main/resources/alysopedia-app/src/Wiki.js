@@ -1,12 +1,31 @@
+
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import './Wiki.js';
+import axios from 'axios';
 
+let configGet = {
+    headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+    responseType: 'json'
+};
 
-function App() {
+const searchWiki = () => {
+    axios.get(`http://localhost:8181/findAllWiki`, configGet)
+        .then(function (response) {
+            let titleArr = response.data;
+            console.log(response.data);
+
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+window.addEventListener("load", searchWiki);
+
+function AppWiki() {
   return (
-    <div className="App">
+    <div className="AppWiki">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -15,7 +34,6 @@ function App() {
         <a
           className="App-link"
           href="https://reactjs.org"
-          target="_blank"
           rel="noopener noreferrer"
         >
           Learn React
@@ -37,4 +55,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppWiki;
