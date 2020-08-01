@@ -15,9 +15,10 @@ const about = () => {
             <a href="/About" className="w3-bar-item w3-button w3-padding">About</a>
         </nav>
         <div>
-            <header className="App-header">
-
-            </header>
+            <article className="App-article">
+                <h1>About</h1>
+                <section>wagsertgr</section>
+            </article>
         </div>
     </div>
     );
