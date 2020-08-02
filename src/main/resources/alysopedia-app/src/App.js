@@ -11,6 +11,7 @@ import Wiki from './pages/Wiki';
 import About from './pages/About';
 import Error from './pages/Error';
 import Navigation from './pages/Navigation';
+import Portal from './pages/admin/Portal';
 //import User from './components/About';
 
 /*
@@ -57,6 +58,7 @@ class App extends Component {
              <Route path="/" component={Home} exact/>
              <Route path="/Wiki" component={Wiki}/>
              <Route path="/About" component={About}/>
+             <Route path="/Admin" component={Portal}/>
              <Route component={Error}/>
            </Switch>    
         </div> 

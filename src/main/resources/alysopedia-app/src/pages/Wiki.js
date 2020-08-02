@@ -10,9 +10,15 @@ let configGet = {
 };
 
 const searchWiki = () => {
+    let wikiTitle = document.getElementById('wikiName')
+    
     axios.get(`http://localhost:8181/readWikiByName/Test`, configGet)
         .then(function (response) {
             let titleArr = response.data[0].title;
+
+            document.querySelector('#wikiName').innerHTML = response.data[0].title;
+            document.querySelector('#wikiCategory').innerHTML = response.data[0].category;
+            document.querySelector('#wikiBody').innerHTML = response.data[0].body;
             console.log(response.data);
             console.log(titleArr);
 
@@ -65,7 +71,9 @@ const Wiki = () => {
         </nav>
         <div>
             <header className="App-header">
-
+              <h1 id='wikiName'></h1>
+              <h2 id='wikiCategory'></h2>
+              <p id='wikiBody'></p>
             </header>
         </div>
     </div>
