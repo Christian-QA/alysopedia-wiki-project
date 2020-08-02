@@ -23,5 +23,3 @@ const postWiki = () => {
         console.log(error);
     });
 }
-let postWikiButton = document.querySelector('#postWikiButton');
-postWikiButton.addEventListener('click', postWiki);
