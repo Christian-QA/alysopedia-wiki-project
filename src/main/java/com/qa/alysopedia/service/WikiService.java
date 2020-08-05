@@ -41,6 +41,14 @@ public class WikiService {
 		return this.mapToDTO(this.wikiRepository.findById(id).orElseThrow(WikiNotFoundException::new));
 	}
 	
+    public List<WikiDTO> findWikiByTitle(String title) {
+        return this.wikiRepository.findWikiByTitle(title).stream().map(this::mapToDTO).collect(Collectors.toList());
+    }
+    
+    public List<WikiDTO> findWikiByCategory(String category) {
+        return this.wikiRepository.findWikiByCategory(category).stream().map(this::mapToDTO).collect(Collectors.toList());
+    }
+	
 	public WikiDTO updateWiki(Long id, Wiki wiki) {
 		Wiki update = this.wikiRepository.findById(id).orElseThrow(WikiNotFoundException::new);
 		update.setTitle(wiki.getTitle());
