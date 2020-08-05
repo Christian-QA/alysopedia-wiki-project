@@ -43,14 +43,18 @@ const portal = () => {
                 <h1>Admin Portal</h1>
                 <h3>Import new wiki documents using the fields below</h3>
                 <section>
-                    <label for="wikiName">Title</label>
+                    <label for="wikiName">Title<br></br></label>
                     <input type="text" id="wikiName" name="wikiName" placeholder="Put title here..."></input>
-                    <label for="wikiCategory">Category</label>
-                    <input type="text" id="wikiCategory" name="wikiCategory" placeholder="Put category here..."></input>
-                    <label for="wikiBody">Body</label>
-                    <input type="text" id="wikiBody" name="wikiBody" placeholder="Put body here..."></input>
-                    <button onclick={postWiki}>Submit</button>.
                 </section>
+                <section>
+                    <label for="wikiCategory">Category<br></br></label>
+                    <input type="text" id="wikiCategory" name="wikiCategory" placeholder="Put category here..."></input>
+                </section>
+                <section>
+                    <label for="wikiBody">Body<br></br></label>
+                    <input type="text" id="wikiBody" name="wikiBody" placeholder="Put body here..." className="body-input" rows="4"></input>
+                </section>
+                <button onclick={postWiki}>Submit</button>
             </article>
         </div>
     </div>
