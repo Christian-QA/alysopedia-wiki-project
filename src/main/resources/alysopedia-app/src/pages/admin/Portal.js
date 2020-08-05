@@ -18,7 +18,7 @@ function postWiki() {
         headers: {'Content-Type': 'application/json'} 
     })
     .then(function (response) {
-          console.log(response);
+        console.log(response);
     })
     .catch(function (error) {
         console.log(error);
@@ -34,7 +34,6 @@ const portal = () => {
             <a href="/" className="w3-wide"><b>Logo</b></a>
             </div>
             <div className="shopping-list"></div>
-
             <a href="#footer" className="w3-bar-item w3-button w3-padding">Contact</a> 
             <a href="javascript:void(0)" className="w3-bar-item w3-button w3-padding" onClick="document.getElementById('newsletter').style.display='block'">Newsletter</a> 
             <a href="/About" className="w3-bar-item w3-button w3-padding">About</a>
@@ -57,5 +56,5 @@ const portal = () => {
     </div>
     );
 }
- 
+
 export default portal;
