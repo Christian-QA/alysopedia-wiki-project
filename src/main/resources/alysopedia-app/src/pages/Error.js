@@ -1,11 +1,11 @@
 import React from 'react';
  
-const Error = () => {
+const Error404 = () => {
     return (
        <div>
-          <p>Error: Page does not exist!</p>
+          <p>Error 404: Page does not exist!</p>
        </div>
     );
 }
  
-export default Error;
+export default Error404;
