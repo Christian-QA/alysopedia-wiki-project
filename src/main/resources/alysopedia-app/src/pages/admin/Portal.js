@@ -2,53 +2,70 @@ import React from 'react';
 import axios from 'axios';
 import Navigation from '../../components/Navigation';
 
-function postWiki() {
-    let name = document.getElementById("wikiName").value;
-    let category = document.getElementById("wikiCategory").value;
-    let body = document.getElementById("wikiBody").value;
+export default class portal extends React.Component {
 
-    axios({
-        method: 'post',
-        url: 'http://localhost:8181/addWiki',
-        data: `{
-            "title" : "${name}",
-            "category" : "${category}",
-            "author" : "Chris",
-            "body" : "${body}"
-        }`,
-        headers: {'Content-Type': 'application/json'} 
-    })
-    .then(function (response) {
-        console.log(response);
-    })
-    .catch(function (error) {
-        console.log(error);
-    });
-}
+    state = {
+        title: '',
+        category: '',
+        author: 'Chris',
+        body: ''
+    }
 
-const portal = () => {
-    return (
-    <div className="portal">
-        <Navigation />
+    handleChange = event => {
+        this.setState({ 
+            title: event.target.value,
+            category: event.target.value,
+            author: event.target.value,
+            body: event.target.value 
+        });
+    }
+    
+    handleSubmit = event => {
+        event.preventDefault();
+    
+        const wiki = {
+            title: this.state.title,
+            category: this.state.category,
+            author: this.state.author,
+            body: this.state.body 
+        };
+    
+        axios.post(`http://localhost:8181/addWiki`, { wiki })
+          .then(res => {
+            console.log(res);
+            console.log(res.data);
+          })
+      }
 
-        <div style={{marginLeft:250 + 'px'}}>
-            <article className="App-article">
-                <h1>Admin Portal</h1>
-                <h3>Import new wiki documents using the fields below</h3>
-                <section>
-                    <label for="wikiName">Title</label>
-                    <input type="text" id="wikiName" name="wikiName" placeholder="Put title here..."></input>
-                    <label for="wikiCategory">Category</label>
-                    <input type="text" id="wikiCategory" name="wikiCategory" placeholder="Put category here..."></input>
-                    <label for="wikiBody">Body</label>
-                    <input type="text" id="wikiBody" name="wikiBody" placeholder="Put body here..."></input>
-                    <button onclick={postWiki}>Submit</button>.
-                </section>
-            </article>
+      render() {
+        return (
+        <div className="portal">
+          <Navigation />
+          
+          <div style={{marginLeft:250 + 'px'}}>
+                <article className="App-article">
+                    <h1>Admin Portal</h1>
+                    <h3>Import new wiki documents using the fields below</h3>
+                    <form onSubmit={this.handleSubmit}>
+                        <section>
+                            <label for="wikiName">Title<br></br></label>
+                            <input type="text" id="wikiName" name="title" placeholder="Put title here..." onChange={this.handleChange}></input>
+                        </section>
+                        <section>
+                            <label for="wikiCategory">Category<br></br></label>
+                            <input type="text" id="wikiCategory" name="category" placeholder="Put category here..." onChange={this.handleChange}></input>
+                        </section>
+                        <section>
+                            <label for="wikiBody">Body<br></br></label>
+                            <input type="text" id="wikiBody" name="body" placeholder="Put body here..." className="body-input" onChange={this.handleChange}></input>
+                        </section>
+                        <button type="submit">Submit</button>
+                    </form>
+                </article>
+            </div>
         </div>
-        
-    </div>
-    );
+        );
+    }
 }
 
-export default portal;
+

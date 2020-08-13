@@ -61,3 +61,10 @@ p {
   font-size: calc(8px + 2vmin);
   color: white;
 }
+
+.body-input {
+  font-size: calc(1px + 2vmin);
+  margin-left: -120%;
+  width: 460%;
+  height: 500%;
+}

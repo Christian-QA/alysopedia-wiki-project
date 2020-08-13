@@ -1,6 +1,6 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
- 
+
 const about = () => {
     return (
     <div className="about">
