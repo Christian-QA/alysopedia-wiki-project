@@ -56,15 +56,15 @@ export default class portal extends React.Component {
                     <form onSubmit={this.handleSubmit}>
                         <section>
                             <label for="wikiName">Title<br></br></label>
-                            <input type="text" id="wikiName" name="wikiName" placeholder="Put title here..." onChange={this.handleChange}></input>
+                            <input type="text" id="wikiName" name="title" placeholder="Put title here..." onChange={this.handleChange}></input>
                         </section>
                         <section>
                             <label for="wikiCategory">Category<br></br></label>
-                            <input type="text" id="wikiCategory" name="wikiCategory" placeholder="Put category here..." onChange={this.handleChange}></input>
+                            <input type="text" id="wikiCategory" name="category" placeholder="Put category here..." onChange={this.handleChange}></input>
                         </section>
                         <section>
                             <label for="wikiBody">Body<br></br></label>
-                            <input type="text" id="wikiBody" name="wikiBody" placeholder="Put body here..." className="body-input" onChange={this.handleChange}></input>
+                            <input type="text" id="wikiBody" name="body" placeholder="Put body here..." className="body-input" onChange={this.handleChange}></input>
                         </section>
                         <button type="submit">Submit</button>
                     </form>
