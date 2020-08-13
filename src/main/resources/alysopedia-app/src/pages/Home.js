@@ -6,6 +6,7 @@ const Home = () => {
     return (
     <div className="Home">
         <Navigation />
+        
         <div style={{marginLeft:250 + 'px'}}>
             <header className="App-header">
                 <p>Click below to proceed</p>
@@ -14,6 +15,7 @@ const Home = () => {
                 <p>Allow me to be your guide</p>
             </header>
         </div>
+
     </div>
     );
 }
