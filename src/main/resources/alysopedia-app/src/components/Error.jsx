@@ -1,9 +1,10 @@
 import React from 'react';
  
-const Error = () => {
+const Error = ({statusCode, message}) => {
     return (
        <div>
-          <p>Error : Something has gone wrong! :(</p>
+          <p>Error {statusCode}: Something has gone wrong! :(</p>
+          <p>{message}</p>
        </div>
     );
 }
