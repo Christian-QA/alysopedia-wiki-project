@@ -3,7 +3,8 @@ import logo from './images/logo.svg';
 import {
   BrowserRouter,
   Route,
-  Switch
+  Switch,
+  Redirect
 } from "react-router-dom";
 import './App.css';
 import Home from './pages/Home';
@@ -45,7 +46,10 @@ class App extends Component {
              <Route path="/Wiki" exact component={Wiki}/>
              <Route path="/About" exact component={About}/>
              <Route path="/Admin" exact component={Portal}/>
-             <Route component={Error}/>
+             <Route>
+               <Error />
+               <Redirect to="/"/>
+             </Route>
            </Switch>    
         </div> 
       </BrowserRouter>
