@@ -68,7 +68,6 @@ window.addEventListener("load", searchWiki);
             <SideSummary />
             <Footer />
         </div>
-        
     </div>
   );
 
