@@ -10,31 +10,8 @@ import './App.css';
 import Home from './pages/Home';
 import Wiki from './pages/Wiki';
 import About from './pages/About';
-import Error from './pages/Error';
-import Navigation from './components/Navigation';
+import Error from './components/Error';
 import Portal from './pages/admin/Portal';
-
-/*
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="./Wiki.js"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-*/
 
 class App extends Component {
   render() {
