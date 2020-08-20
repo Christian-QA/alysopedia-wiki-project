@@ -3,7 +3,7 @@ import logo from '../../images/logo.svg';
 
 const SideSummary = () => {
     return (
-      <div className="App" style={{flexDirection: "row-reverse"}}>
+      <div className="App" style={{flex: 1, flexDirection: "row-reverse"}}>
           <p>Table</p>
           {/* <img src={logo}  alt="logo" /> */}
             <table>

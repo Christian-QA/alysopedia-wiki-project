@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contents = () => {
     return (
-      <div className="App" style={{flexDirection: "row"}}>
+      <div className="App" style={{flex: 1, flexDirection: "row"}}>
           <p>Contents</p>
           {/* <img src={logo}  alt="logo" /> */}
             <ul>
