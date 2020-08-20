@@ -44,7 +44,6 @@ const Wiki = () => {
             body="wiki bodyyyyyyyyyyyyy"/>
             <Footer />
         </div>
-        
     </div>
   );
 

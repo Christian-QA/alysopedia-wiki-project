@@ -32,7 +32,6 @@ export default class portal extends React.Component {
     }
 
     handleSubmit = (event) => {
-
         event.preventDefault();
         const { title, category, author, body } = this.state;
         axios.post(`http://localhost:8181/addWiki`, { title, category, author, body })
@@ -61,7 +60,7 @@ export default class portal extends React.Component {
                         </section>
                         <section>
                             <label for="wikiBody">Body<br></br></label>
-                            <input type="text" id="wikiBody" name="body" placeholder="Put body here..." value={this.state.body} className="body-input" onChange={this.handleBodyChange}></input>
+                            <textarea id="wikiBody" name="body" placeholder="Put body here..." value={this.state.body} className="body-input" rows='20' onChange={this.handleBodyChange}></textarea>
                         </section>
                         <button type="submit">Submit</button>
                     </form>
