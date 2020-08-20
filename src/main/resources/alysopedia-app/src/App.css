@@ -1,3 +1,7 @@
+body {
+  background-color: #282c34;
+}
+
 .App {
   text-align: center;
 }
@@ -64,5 +68,14 @@ p {
 
 .body-input {
   font-size: calc(1px + 2vmin);
+  margin-left: -120%;
   width: 600px;
+  height: 500%;
+}
+
+.App-footer {
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+  font-size: xx-small;
 }

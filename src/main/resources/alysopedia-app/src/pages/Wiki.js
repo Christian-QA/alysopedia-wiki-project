@@ -2,8 +2,10 @@
 import React from 'react';
 import logo from '../images/logo.svg';
 import './Wiki.js';
+import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 import axios from 'axios';
-import CodeMirror from 'react-codemirror'
+import Article from '../components/Article';
 
 let configGet = {
     headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
@@ -33,25 +35,14 @@ window.addEventListener("load", searchWiki);
 const Wiki = () => {
   return (
     <div className="Wiki">
-        <nav className="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style={{width:250 + 'px'}} id="mySidebar">
-            <div className="w3-container w3-display-container w3-padding-16">
-            <i onClick="w3_close()" className="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
-            <a href="/" className="w3-wide"><b>Logo</b></a>
-            </div>
-            <div className="shopping-list"></div>
+        <Navigation />
 
-            <a href="#footer" className="w3-bar-item w3-button w3-padding">Contact</a> 
-            <a href="javascript:void(0)" className="w3-bar-item w3-button w3-padding" onClick="document.getElementById('newsletter').style.display='block'">Newsletter</a> 
-            <a href="/About" className="w3-bar-item w3-button w3-padding">About</a>
-        </nav>
-        <div>
-            <main className="App-header">
-            <CodeMirror value={'wikiBody'} />
-              <h1 id='wikiName'></h1>
-              <h2 id='wikiCategory'></h2>
-              
-              <p id='wikiBody'></p>
-            </main>
+        <div style={{marginLeft:250 + 'px'}}>
+            <Article 
+            title="WikiName"
+            subtitleText="Catagory: ${}"
+            body="wiki bodyyyyyyyyyyyyy"/>
+            <Footer />
         </div>
     </div>
   );

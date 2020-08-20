@@ -1,20 +1,24 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
+import Article from '../components/Article';
+import Footer from '../components/Footer';
 
-const about = () => {
+const About = () => {
     return (
     <div className="about">
         <Navigation />
 
         <div style={{marginLeft:250 + 'px'}}>
-            <article className="App-article">
-                <h1>About</h1>
-                <section>wagsertgr</section>
-            </article>
+            <Article
+            title="About"
+            subtitleText="subtitle stuff"
+            body="Body text ...wagsertgr" />
+            <section><p>Another section</p></section>
+            <Footer />
         </div>
         
     </div>
     );
 }
  
-export default about;
+export default About;
