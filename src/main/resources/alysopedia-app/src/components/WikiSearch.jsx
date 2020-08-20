@@ -15,9 +15,11 @@ const WikiSearch = () => {
         };
 
     const handleWikiTitleChange = (event) => {       
-        this.setWiki(event.target.value);
+        setWiki(event.target.value);
+        console.log(wiki);
     }
 
+    // Need to send data back to wiki.js
     const handleSubmit = (event) => {
         event.preventDefault();
         axios.get(reqUrl + wiki, configGet)
@@ -33,7 +35,7 @@ const WikiSearch = () => {
           <form onSubmit={handleSubmit}>
             <section>
                     <label for="wikiName">By Title<br></br></label>
-                    <input type="text" id="wikiName" name="title" placeholder="Looking for title..." value={this.state.title} onChange={handleWikiTitleChange}></input>
+                    <input type="text" id="wikiName" name="title" placeholder="Looking for title..." value={wiki} onChange={handleWikiTitleChange}></input>
             </section>
             <button type="submit">Submit</button>
           </form>
