@@ -5,8 +5,8 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import axios from 'axios';
 import Article from '../components/Article';
-import SideSummary from '../components/wiki/SideSummary';
 import logo from '../images/logo.svg';
+import WikiSearch from '../components/WikiSearch.jsx';
 
 const Wiki = () => {
 
@@ -16,8 +16,9 @@ const Wiki = () => {
     const[catagory, setCatagory] = useState(`Catagory`);
     const[body, setBody] = useState(`Body`);
 
-    //page to retrieve
-    let reqUrl = `http://localhost:8181/readWikiByName/Test`;
+    let reqUrl = `http://localhost:8181/readWikiByName/`;
+    //page to retrieve - currently default to Test
+    let wikiPage = `Test`;
 
 // request for data
     let configGet = {
@@ -26,8 +27,8 @@ const Wiki = () => {
     };
 
 const searchWiki = () => {
-    
-    axios.get(reqUrl, configGet)
+
+    axios.get(reqUrl + wikiPage, configGet)
         .then(function (response) {
             let data = response.data;
             setData(data);
@@ -49,11 +50,13 @@ const searchWiki = () => {
 window.addEventListener("load", searchWiki);
 
 // wiki page display - as long as data returned is empty page will be 'loading'
+// wiki.active controls display of <Contents /> and wiki.table controls display of <SideSummary />
   return (
     <div className="Wiki">
         <Navigation />
 
         <div style={{marginLeft:250 + 'px'}}>
+            <WikiSearch />
             {
                 Array.isArray(data) && data.length > 0 ?
                 <Article 
