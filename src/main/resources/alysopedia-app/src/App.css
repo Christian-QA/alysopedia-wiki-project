@@ -68,7 +68,6 @@ p {
 
 .body-input {
   font-size: calc(1px + 2vmin);
-  margin-left: -120%;
   width: 600px;
   height: 500%;
 }
