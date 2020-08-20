@@ -3,7 +3,9 @@ import React from 'react';
 import logo from '../images/logo.svg';
 import './Wiki.js';
 import Navigation from '../components/Navigation';
+import Footer from '../components/Footer';
 import axios from 'axios';
+import Article from '../components/Article';
 
 let configGet = {
     headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
@@ -36,11 +38,11 @@ const Wiki = () => {
         <Navigation />
 
         <div style={{marginLeft:250 + 'px'}}>
-            <header className="App-header">
-              <h1 id='wikiName'>Wiki Name</h1>
-              <h2 id='wikiCategory'>Category</h2>
-              <p id='wikiBody'>Wiki bodyyyyyyyyyyyyyyyy</p>
-            </header>
+            <Article 
+            title="WikiName"
+            subtitleText="Catagory: ${}"
+            body="wiki bodyyyyyyyyyyyyy"/>
+            <Footer />
         </div>
         
     </div>
