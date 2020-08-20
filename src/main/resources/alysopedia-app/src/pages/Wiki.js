@@ -5,7 +5,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import axios from 'axios';
 import Article from '../components/Article';
-import SideSummary from '../components/wiki/Side-Summary';
+import SideSummary from '../components/wiki/SideSummary';
 import logo from '../images/logo.svg';
 
 const Wiki = () => {
@@ -60,12 +60,17 @@ window.addEventListener("load", searchWiki);
                     title={title}
                     subtitleText={catagory}
                     body={body}
+                    wiki={
+                        {
+                        active: true,
+                        table: true
+                        }
+                    }
                 />
-            : <div>
+            : <div className="App-header">
                 <h1>Wiki data is loading...</h1> <img src={logo} className="App-logo" alt="logo" />
               </div>
             }
-            <SideSummary />
             <Footer />
         </div>
     </div>

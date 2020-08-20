@@ -4,7 +4,7 @@ import logo from '../../images/logo.svg';
 const SideSummary = () => {
     return (
       <div className="App" style={{flexDirection: "row-reverse"}}>
-          <p>Title</p>
+          <p>Table</p>
           {/* <img src={logo}  alt="logo" /> */}
             <table>
                 <tbody>
