@@ -36,7 +36,6 @@ const Wiki = () => {
     };
 
     const handleWikiTitleChange = (event) => {       
-        // need to include a conditional event that replaces ' ' with '%20' in event.target.value for url
         setWikiPageTitle(event.target.value);
         console.log(wikiPageTitle);
     }
