@@ -10,53 +10,69 @@ import WikiSearch from '../components/WikiSearch.jsx';
 
 const Wiki = () => {
 
-    //states
+    const reqUrl = `http://localhost:8181/readWikiByName/`;
+    //page to retrieve - currently default to Test
+    let wikiPage = `Test`;
+
+    // States
     const[data, setData] = useState([]);
     const[title, setTitle] = useState(`Title`);
     const[catagory, setCatagory] = useState(`Catagory`);
     const[body, setBody] = useState(`Body`);
-
-    let reqUrl = `http://localhost:8181/readWikiByName/`;
-    //page to retrieve - currently default to Test
-    let wikiPage = `Test`;
-
-// request for data
+    // search bar state (used in WikiSearch.jsx)
+    const[wiki, setWiki] = useState(wikiPage);
+   
+    // request for data
     let configGet = {
     headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
     responseType: 'json'
     };
 
-const searchWiki = () => {
+    const handleWikiTitleChange = (event) => {       
+        // need to include a conditional event that replaces ' ' with '%20' in event.target.value for url
+        setWiki(event.target.value);
+       console.log(wiki);
+    }
 
-    axios.get(reqUrl + wikiPage, configGet)
-        .then(function (response) {
-            let data = response.data;
-            setData(data);
-            
-            setTitle(response.data[0].title);
-            setCatagory(response.data[0].category);
-            setBody(response.data[0].body);
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        searchWiki();
+      }
 
-            console.log(data);
-            console.log(title);
-            console.log(catagory);
-            console.log(body);
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-}
+    const searchWiki = () => {
+        axios.get(reqUrl + wiki, configGet)
+            .then(response => {
+                let data = response.data;
+                setData(data);
+                
+                setTitle(response.data[0].title);
+                setCatagory(response.data[0].category);
+                setBody(response.data[0].body);
 
+                console.log(data);
+                console.log(title);
+                console.log(catagory);
+                console.log(body);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+
+// change this?
 window.addEventListener("load", searchWiki);
 
-// wiki page display - as long as data returned is empty page will be 'loading'
+// wiki page display - as long as data returned is empty page will be 'loading' - have default
 // wiki.active controls display of <Contents /> and wiki.table controls display of <SideSummary />
   return (
     <div className="Wiki">
         <Navigation />
 
         <div style={{marginLeft:250 + 'px'}}>
-            <WikiSearch />
+            <WikiSearch
+            wikiTitle={wiki}
+            onWikiTitleChange={handleWikiTitleChange}
+            onSubmit={handleSubmit} />
             {
                 Array.isArray(data) && data.length > 0 ?
                 <Article 
