@@ -47,7 +47,6 @@ public class UserService implements IUserService, UserDetailsService {
         return user.map(UserDTO::new).get();
 	}
 
-	@Transactional
 	@Override
 	public UserDTO createUser(UserDTO userDTO) throws UserAlreadyExistsException {
 		User user = new User();
