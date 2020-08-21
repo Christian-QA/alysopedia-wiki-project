@@ -245,9 +245,8 @@ This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md
 
 * **Christian Redfern** [[Christian-QA](https://github.com/Christian-QA)]
 * **Caroline Strasenburgh** [[CarolineS-QA](https://github.com/CarolineS-QA)]
-<!--
 * **Felix Marley** [[Femarleycode](https://github.com/Femarleycode)]
-* **Luke Smyth-osbourne** [[sosbourneQA](https://github.com/sosbourneQA)]
+<!--* **Luke Smyth-osbourne** [[sosbourneQA](https://github.com/sosbourneQA)]
 -->
 
 ## Acknowledgements
