@@ -1,5 +1,4 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
 import SideSummary from './wiki/SideSummary';
 import Contents from './wiki/Contents';
 
