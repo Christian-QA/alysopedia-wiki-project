@@ -19,6 +19,7 @@ import com.qa.alysopedia.repository.UserRepository;
 
 @Service
 public class UserService implements IUserService, UserDetailsService {
+	
 	@Autowired
 	private UserRepository repository;
 
@@ -48,7 +49,6 @@ public class UserService implements IUserService, UserDetailsService {
 	@Override
 	public UserDTO createUser(UserDTO userDTO) throws UserAlreadyExistsException {
 		User user = new User();
-
 		user.setUsername(userDTO.getUsername());
 		user.setPassword(userDTO.getPassword());
 		user.setActive(userDTO.isEnabled());
