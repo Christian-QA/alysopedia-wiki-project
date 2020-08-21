@@ -12,7 +12,13 @@ const About = () => {
             <Article
             title="About"
             subtitleText="subtitle stuff"
-            body="Body text ...wagsertgr" />
+            body="Body text ...wagsertgr"
+            wiki={
+                {
+                contents: false,
+                table: false
+                }
+            } />
             <section><p>Another section</p></section>
             <Footer />
         </div>
