@@ -15,7 +15,7 @@ const About = () => {
             body="Body text ...wagsertgr"
             wiki={
                 {
-                active: false,
+                contents: false,
                 table: false
                 }
             } />

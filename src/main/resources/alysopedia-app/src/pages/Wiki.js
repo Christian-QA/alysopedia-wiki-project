@@ -14,13 +14,20 @@ const Wiki = () => {
     //page to retrieve - currently default to Test
     let wikiPage = `Test`;
 
-    // States
+    // States - manage default display
     const[data, setData] = useState([]);
     const[title, setTitle] = useState(`Title`);
     const[catagory, setCatagory] = useState(`Catagory`);
     const[body, setBody] = useState(`Body`);
+    // if set to 'true' a contents page & side summary table will be displayed
+    // wiki.contents controls display of <Contents /> and wiki.table controls display of <SideSummary />
+    const[wiki, setWiki] = useState(
+        {
+        contents: false,
+        table: false
+        });
     // search bar state (used in WikiSearch.jsx)
-    const[wiki, setWiki] = useState(wikiPage);
+    const[wikiPageTitle, setWikiPageTitle] = useState(wikiPage);
    
     // request for data
     let configGet = {
@@ -30,8 +37,8 @@ const Wiki = () => {
 
     const handleWikiTitleChange = (event) => {       
         // need to include a conditional event that replaces ' ' with '%20' in event.target.value for url
-        setWiki(event.target.value);
-       console.log(wiki);
+        setWikiPageTitle(event.target.value);
+        console.log(wikiPageTitle);
     }
 
     const handleSubmit = (event) => {
@@ -40,7 +47,7 @@ const Wiki = () => {
       }
 
     const searchWiki = () => {
-        axios.get(reqUrl + wiki, configGet)
+        axios.get(reqUrl + wikiPageTitle, configGet)
             .then(response => {
                 let data = response.data;
                 setData(data);
@@ -48,11 +55,13 @@ const Wiki = () => {
                 setTitle(response.data[0].title);
                 setCatagory(response.data[0].category);
                 setBody(response.data[0].body);
+                //set to response once feature added
+                setWiki({
+                    contents: false,
+                    table: false
+                    });
 
                 console.log(data);
-                console.log(title);
-                console.log(catagory);
-                console.log(body);
             })
             .catch(function (error) {
                 console.log(error);
@@ -62,15 +71,14 @@ const Wiki = () => {
 // change this?
 window.addEventListener("load", searchWiki);
 
-// wiki page display - as long as data returned is empty page will be 'loading' - have default
-// wiki.active controls display of <Contents /> and wiki.table controls display of <SideSummary />
+// wiki page display - as long as data returned is empty page will be 'loading' - have default page
   return (
     <div className="Wiki">
         <Navigation />
 
         <div style={{marginLeft:250 + 'px'}}>
             <WikiSearch
-            wikiTitle={wiki}
+            wikiTitle={wikiPageTitle}
             onWikiTitleChange={handleWikiTitleChange}
             onSubmit={handleSubmit} />
             {
@@ -79,12 +87,7 @@ window.addEventListener("load", searchWiki);
                     title={title}
                     subtitleText={catagory}
                     body={body}
-                    wiki={
-                        {
-                        active: true,
-                        table: true
-                        }
-                    }
+                    wiki={wiki}
                 />
             : <div className="App-header">
                 <h1>Wiki data is loading...</h1> <img src={logo} className="App-logo" alt="logo" />

@@ -11,7 +11,7 @@ const Article = ({title, subtitleText, body, wiki}) => {
         <h2>{subtitleText}</h2>
       
         {
-          wiki.active ?
+          wiki.contents ?
           <Contents />
           : <div></div>
         }
