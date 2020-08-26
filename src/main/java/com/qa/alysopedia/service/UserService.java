@@ -1,6 +1,7 @@
 package com.qa.alysopedia.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
@@ -19,6 +20,7 @@ import com.qa.alysopedia.repository.UserRepository;
 
 @Service
 public class UserService implements IUserService, UserDetailsService {
+	
 	@Autowired
 	private UserRepository repository;
 
@@ -40,15 +42,14 @@ public class UserService implements IUserService, UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-
-		return null;
+		Optional<User> user = repository.findByUsername(username);
+        user.orElseThrow(() -> new UsernameNotFoundException ("The username '" + username + "' does not exist"));
+        return user.map(UserDTO::new).get();
 	}
 
-	@Transactional
 	@Override
 	public UserDTO createUser(UserDTO userDTO) throws UserAlreadyExistsException {
 		User user = new User();
-
 		user.setUsername(userDTO.getUsername());
 		user.setPassword(userDTO.getPassword());
 		user.setActive(userDTO.isEnabled());
