@@ -19,35 +19,30 @@ let data = [{
     "body": "waesfserg"
 },
 {
-    "title": "Nat 3",
-    "category": "Cat 4",
+    "title": "Nat 4",
+    "category": "Cat 3",
     "author": "Chris",
     "body": "waesfserg"
 }];
 
 
-
-
-
 function removeDuplicates(array, key) {
     let lookup = new Set();
-    return array.filter(obj => !lookup.has(obj[key]) && lookup.add(obj[key]));
+    array.filter(obj => !lookup.has(obj[key]) && lookup.add(obj[key]));
+    return Array.from(lookup);
 }
 
+const SideList = () =>  {
+    const indexItems = removeDuplicates(data, 'category');
+    const listItems = indexItems.map((indexItems) =>
+        <li>{indexItems}</li>
+    );
 
-
-const SideList = (props) => {   
-    console.log(removeDuplicates(data, 'category'))
-    return (   
-        <div className="shopping-list">
-            <ul>
-              <li>{props.name}</li>
-              <li>WhatsApp</li>
-              <li>Oculus</li>
-            </ul>
-          </div>
-        );
-      }
+    console.log(indexItems)
+    console.log(listItems)
+    return (
+        <ul>{listItems}</ul>
+    )
+}
     
-
 export default SideList;

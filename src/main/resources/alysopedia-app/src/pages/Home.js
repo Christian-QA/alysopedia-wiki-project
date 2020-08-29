@@ -17,7 +17,7 @@ const Home = () => {
                 <a href="/Wiki"><img src={logo} className="App-logo" alt="logo" /></a>
                 <h2>Allow me to be your guide</h2>
              </section>
-             <SideList name="Category Example" data="C"/>
+             <SideList />
             <Footer />
         </div>
 
