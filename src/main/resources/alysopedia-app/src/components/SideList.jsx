@@ -16,6 +16,8 @@ let data = [{
 ];
 
 
+
+
 const SideList = () =>  {
     let indexCat = [];
     let indexSub = [];
@@ -27,6 +29,9 @@ const SideList = () =>  {
         indexCat[i] = data[i].category;
 
         indexSub[i] = data[i].subcategory.split(',');
+
+
+
 
         
         listItems = indexCat.map((indexCat, i) =>
@@ -44,32 +49,24 @@ const SideList = () =>  {
                 <Collapsible trigger={indexSub[i][3]} className="Category-sub" >
                     <p>This is the collapsible content.</p>
                 </Collapsible>
+                <Collapsible trigger={indexSub[i][4]} className="Category-sub" >
+                    <p>This is the collapsible content.</p>
+                </Collapsible>
+                <Collapsible trigger={indexSub[i][5]} className="Category-sub" >
+                    <p>This is the collapsible content.</p>
+                </Collapsible>
+                <Collapsible trigger={indexSub[i][6]} className="Category-sub" >
+                    <p>This is the collapsible content.</p>
+                </Collapsible>
+                <Collapsible trigger={indexSub[i][7]} className="Category-sub" >
+                    <p>This is the collapsible content.</p>
+                </Collapsible>
             </Collapsible>
         </>
-
-
-
         );
         console.log(listItems[i])
 
     }
-    
-
-    console.log(listItems[0])
-    console.log(listItems[1])
-
-    // const subListItems = indexSub.map((indexSub) =>
-    //     <>
-    //         <Collapsible trigger={indexSub} className="Category-sub" >
-    //             <p>This is the collapsible content.</p>
-    //         </Collapsible>
-    //     </>
-    // );
-
-
-
-
-    console.log(listItems)
     return (        
         <div>{listItems}</div>
     )
