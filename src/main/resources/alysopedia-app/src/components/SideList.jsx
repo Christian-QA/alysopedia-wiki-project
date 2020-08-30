@@ -78,11 +78,8 @@ const SideList = () =>  {
     for (let i = 0; i < data.length; i++) {
         indexSplit[i] = data[i].category.split(',')
         
-       
-        
         console.log(indexSplit[i][0]);
         console.log(indexSplit[i][1]);
-
 
     }
     console.log(indexSplit)
@@ -100,8 +97,6 @@ const SideList = () =>  {
         </>
     );
 
-    
-
     const listItems = indexSplitFinal.map((indexSplitFinal) =>
         <>
             <Collapsible trigger={indexSplitFinal[0]} className="Category-main" >
@@ -111,6 +106,7 @@ const SideList = () =>  {
     );
 
 
+    
     console.log(subListItems.toString())
     return (        
         <div>{listItems}</div>
