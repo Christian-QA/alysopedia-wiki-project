@@ -20,21 +20,35 @@ const SideList = () =>  {
     let indexCat = [];
     let indexSub = [];
     let listItems;
+    let subListItems;
 
     for (let i = 0; i < data.length; i++) {
 
         indexCat[i] = data[i].category;
 
-        indexSub[i] = data[i].subcategory;
+        indexSub[i] = data[i].subcategory.split(',');
 
+        
         listItems = indexCat.map((indexCat, i) =>
         <>
             <Collapsible trigger={indexCat} className="Category-main" >
-                <Collapsible trigger={indexSub[i]} className="Category-sub" >
+                <Collapsible trigger={indexSub[i][0]} className="Category-sub" >
+                    <p>This is the collapsible content.</p>
+                </Collapsible>
+                <Collapsible trigger={indexSub[i][1]} className="Category-sub" >
+                    <p>This is the collapsible content.</p>
+                </Collapsible>
+                <Collapsible trigger={indexSub[i][2]} className="Category-sub" >
+                    <p>This is the collapsible content.</p>
+                </Collapsible>
+                <Collapsible trigger={indexSub[i][3]} className="Category-sub" >
                     <p>This is the collapsible content.</p>
                 </Collapsible>
             </Collapsible>
         </>
+
+
+
         );
         console.log(listItems[i])
 
