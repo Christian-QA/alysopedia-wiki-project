@@ -17,7 +17,7 @@ let data = [{
 },
 {    
     "title": "Nat 1",
-    "category": "Cat 1",
+    "category": "Cat 1, Sub 2",
     "subcategory": "Sub 2",
     "author": "Chris",
     "body": "fghdhyjd"
@@ -56,47 +56,62 @@ let data = [{
     "subcategory": "Sub 2",
     "author": "Chris",
     "body": "waesfserg"
+},
+{
+    "title": "Nat 4",
+    "category": "Cat 4, Sub 4",
+    "subcategory": "Sub 4",
+    "author": "Chris",
+    "body": "waesfserg"
 }];
 
 
-
-
-function removeDuplicatesCat(array, keyOne) {
-    let category = new Set();
-    array.filter(obj => !category.has(obj[keyOne]) && category.add(obj[keyOne]));
-    return Array.from(category);
+function removeDuplicates(array) {
+    array = array.map(JSON.stringify).reverse() // convert to JSON string the array content, then reverse it (to check from end to begining)
+    .filter(function(item, index, array){ return array.indexOf(item, index + 1) === -1; }) // check if there is any occurence of the item in whole array
+    .reverse().map(JSON.parse) // revert it to original state
+    return array;
 }
 
 const SideList = () =>  {
     let indexSplit = [];
     for (let i = 0; i < data.length; i++) {
         indexSplit[i] = data[i].category.split(',')
+        
+       
+        
         console.log(indexSplit[i][0]);
         console.log(indexSplit[i][1]);
-    }
 
+
+    }
+    console.log(indexSplit)
+
+    let indexSplitFinal = removeDuplicates(indexSplit)
+
+    console.log(indexSplitFinal)
 
     
-
-    const indexCat = removeDuplicatesCat(data, 'category');
-    const indexSub = [];
-
-
-
-
-
-    const listItems = indexCat.map((indexSplit) =>
+    const subListItems = indexSplitFinal.map((indexSplitFinal) =>
         <>
-            <Collapsible trigger={indexCat} className="Category-main" >
-                <Collapsible trigger="gfd" className="Category-sub" >
-                    <p>This is the collapsible content.</p>
-                </Collapsible>
+            <Collapsible trigger={indexSplitFinal[1]} className="Category-sub" >
+                <p>This is the collapsible content.</p>
             </Collapsible>
         </>
     );
 
-    console.log(indexCat)
-    console.log(data.length)
+    
+
+    const listItems = indexSplitFinal.map((indexSplitFinal) =>
+        <>
+            <Collapsible trigger={indexSplitFinal[0]} className="Category-main" >
+                    { subListItems }
+            </Collapsible>
+        </>
+    );
+
+
+    console.log(subListItems.toString())
     return (        
         <div>{listItems}</div>
     )
