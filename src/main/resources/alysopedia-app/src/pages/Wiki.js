@@ -10,7 +10,7 @@ import WikiSearch from '../components/WikiSearch.jsx';
 
 const Wiki = () => {
 
-    const reqUrl = `http://localhost:8182/readWikiByName/`;
+    const reqUrl = `http://localhost:8181/readWikiByName/`;
     //page to retrieve - currently default to Test
     let wikiPage = `Test`;
 
