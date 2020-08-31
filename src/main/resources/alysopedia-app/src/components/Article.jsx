@@ -33,7 +33,7 @@ const Article = ({title, subtitleText, body, wiki}) => {
     let result = md.render(body);
     
     return (
-      <div className="App-article">
+      <div className="App-article container">
         <h1>Alysopedia | {title}</h1>
         {/* <img src={qr} className="QR Code" alt="QR Code" /> */}
         <h2>{subtitleText}</h2>
