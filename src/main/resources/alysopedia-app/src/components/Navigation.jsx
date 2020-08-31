@@ -2,10 +2,10 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import SideList from '../components/SideList';
 
- 
+
 const Navigation = () => {
-    return (
-    <>
+   return (
+   <>
       <div className="navigation">
          <nav className="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style={{width:250 + 'px'}} id="mySidebar">
             <div className="w3-container w3-display-container w3-padding-16">
@@ -20,7 +20,7 @@ const Navigation = () => {
          </nav>
       </div>
    </>
-    );
+   );
 }
- 
+
 export default Navigation;
