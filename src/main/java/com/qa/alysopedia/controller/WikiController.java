@@ -63,12 +63,5 @@ public class WikiController {
 	public ResponseEntity<WikiDTO> updateWiki(@PathVariable Long id, @RequestBody Wiki wiki) {
 		return ResponseEntity.ok(this.service.updateWiki(id, wiki));
 	}
-	
-	@DeleteMapping("/deleteWiki/{id}")
-    @CrossOrigin(origins = "http://localhost:3000")
-	public ResponseEntity<?> deleteCharacter(@PathVariable Long id) {
-		return this.service.deleteWiki(id)
-			? ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build()
-			: ResponseEntity.noContent().build();
-	}
+
 }
