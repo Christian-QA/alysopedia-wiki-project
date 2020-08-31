@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './images/logo.svg';
 import {
   BrowserRouter,
   Route,
@@ -12,7 +11,6 @@ import Wiki from './pages/Wiki';
 import About from './pages/About';
 import Error from './components/Error';
 import Portal from './pages/admin/Portal';
-import Collapsible from 'react-collapsible';
 
 class App extends Component {
   render() {
