@@ -78,8 +78,9 @@ window.addEventListener("load", searchWiki);
         <div style={{marginLeft:250 + 'px'}}>
             <br></br>
             <WikiSearch
-            wikiTitle={wikiPageTitle}
-            onWikiTitleChange={handleWikiTitleChange}
+            label="Jump to page:"
+            wikiSearch={wikiPageTitle}
+            onSearchChange={handleWikiTitleChange}
             onSubmit={handleSubmit} />
             {
                 Array.isArray(data) && data.length > 0 ?
