@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../images/logo.svg';
 import Navigation from '../components/Navigation';
+import SideList from '../components/SideList';
 import Footer from '../components/Footer';
  
 const Home = () => {
@@ -16,7 +17,7 @@ const Home = () => {
                 <a href="/Wiki"><img src={logo} className="App-logo" alt="logo" /></a>
                 <h2>Allow me to be your guide</h2>
              </section>
-            
+             <SideList />
             <Footer />
         </div>
 

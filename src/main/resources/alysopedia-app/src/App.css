@@ -78,3 +78,33 @@ p {
   text-align: center;
   font-size: xx-small;
 }
+
+.Collapsible {
+  font-size: large;
+  background-color: #31d4da;
+}
+
+.Collapsible__contentOuter {
+  font-size: large;
+  background-color: #31d4da;
+}
+
+.Collapsible__contentInner {
+  font-size: large;
+  background-color: #000000;
+}
+
+.Category-main {
+  font-size: small;
+  background-color: #601aaf;
+}
+
+.Category-sub {
+  font-size: small;
+  background-color: #76127a;
+  margin-left: 5px;
+}
+
+.Collapsible__trigger {
+  font-size: large;
+}

@@ -14,6 +14,12 @@ const Wiki = () => {
     //page to retrieve - currently default to Test
     let wikiPage = `Test`;
 
+    // request for data
+    let configGet = {
+    headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
+    responseType: 'json'
+    };
+
     // States - manage default display
     const[data, setData] = useState([]);
     const[title, setTitle] = useState(`Title`);
@@ -28,12 +34,6 @@ const Wiki = () => {
         });
     // search bar state (used in WikiSearch.jsx)
     const[wikiPageTitle, setWikiPageTitle] = useState(wikiPage);
-   
-    // request for data
-    let configGet = {
-    headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-    responseType: 'json'
-    };
 
     const handleWikiTitleChange = (event) => {       
         setWikiPageTitle(event.target.value);
@@ -76,6 +76,7 @@ window.addEventListener("load", searchWiki);
         <Navigation />
 
         <div style={{marginLeft:250 + 'px'}}>
+            <br></br>
             <WikiSearch
             wikiTitle={wikiPageTitle}
             onWikiTitleChange={handleWikiTitleChange}
