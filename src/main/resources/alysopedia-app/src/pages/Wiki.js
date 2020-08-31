@@ -78,7 +78,7 @@ window.addEventListener("load", searchWiki);
         <div style={{marginLeft:250 + 'px'}}>
             <br></br>
             <WikiSearch
-            label="Jump to page:"
+            label="Jump to page: "
             wikiSearch={wikiPageTitle}
             onSearchChange={handleWikiTitleChange}
             onSubmit={handleSubmit} />

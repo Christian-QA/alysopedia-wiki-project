@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import WikiSearch from './WikiSearch';
 
  
 const Navigation = () => {
@@ -10,7 +11,6 @@ const Navigation = () => {
             <div className="w3-container w3-display-container w3-padding-16">
                <NavLink className="w3-wide" to="/"><b>Logo</b></NavLink>
             </div>
-            <div className="shopping-list"></div>
             <NavLink className="w3-bar-item w3-button w3-padding" to="/Wiki">Wiki</NavLink>
             <NavLink className="w3-bar-item w3-button w3-padding" to="/About">About</NavLink>
             <NavLink className="w3-bar-item w3-button w3-padding" to="/Admin">Portal</NavLink>
