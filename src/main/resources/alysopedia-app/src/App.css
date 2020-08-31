@@ -102,6 +102,7 @@ p {
 .Category-sub {
   font-size: small;
   background-color: #76127a;
+  margin-left: 5px;
 }
 
 .Collapsible__trigger {

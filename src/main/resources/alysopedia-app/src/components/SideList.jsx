@@ -15,52 +15,6 @@ let data = [{
 }
 ];
 
-let wiki = [{
-    "title" : "Test",
-    "category" : "Sub 1",
-    "subcategory" : "Sub 1",
-    "author" : "Chris",
-    "body" : "Following the decisive victory of the markdown documents, the cloud reigned surpeme, culling the non-cloud folk... it was bad, mon"
-}, 
-{
-    "title" : "Test2",
-    "category" : "Cat 2",
-    "subcategory" : "Sub 4",
-    "author" : "Chris",
-    "body" : "Following the decisive victory of the markdown documents, the cloud reigned surpeme, culling the non-cloud folk... it was bad, mon"
-}, 
-{
-    "title" : "Test3",
-    "category" : "Cat 2",
-    "subcategory" : "Sub 5",
-    "author" : "Chris",
-    "body" : "Following the decisive victory of the markdown documents, the cloud reigned surpeme, culling the non-cloud folk... it was bad, mon"
-}
-]
-
-
-const ListFiller = (list, sublist) => {
-    let wikiCat;
-    let wikiSub;
-    let wikiTitle;
-    wiki.forEach(element => {
-        wikiCat = element.category.split(',')[0]
-        wikiSub = element.category.split(',')[1]
-        wikiTitle = element.title;
-        console.log(wikiSub)
-
-        if (wikiCat == list && sublist) {
-            return(
-                wikiTitle
-            )
-        }
-        
-    });
-}
-
-
-
-
 
 const SideList = () =>  {
     let indexCat = [];
@@ -77,7 +31,7 @@ const SideList = () =>  {
         <>
             <Collapsible trigger={indexCat} className="Category-main" >
                 <Collapsible trigger={indexSub[i][0]} className="Category-sub" >
-                    <p>{ListFiller(indexCat, indexSub[i][0])}</p>
+                    <p>{indexCat + " " + indexSub[i][0]}</p>
                 </Collapsible>
                 <Collapsible trigger={indexSub[i][1]} className="Category-sub" >
                     <p>This is the collapsible content.</p>
