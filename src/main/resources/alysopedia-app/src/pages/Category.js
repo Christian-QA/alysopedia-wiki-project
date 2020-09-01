@@ -7,14 +7,8 @@ import axios from 'axios';
 
 let selected = "Cael Theocracy"
 
-const selection = () => {
-    
-    return(
-        <Navigation category={selected}/>
-    );
-}
-
 const Category = () => {
+    document.getElementsByClassName('open')
 
     const CategoryCall = (props) =>  {
         
@@ -23,6 +17,8 @@ const Category = () => {
             responseType: 'json'
         };
         
+
+
         const[returnedTitles, setReturnedTitles] = useState([]);
         var titleArray = [];
 
@@ -38,8 +34,7 @@ const Category = () => {
                     <React.Fragment key={titleArray}>
                         {<p style={{width:250 + 'px'}}>{titleArray}</p>}
                     </React.Fragment>
-                )
-                )
+                ))
                 console.log(returnedTitles[0]); // works
                 console.log(titleArray[0]);
                     
@@ -50,7 +45,6 @@ const Category = () => {
         }, [])
         return (
             <div>
-                <p>huvhujkv</p>
                 <>
                     {returnedTitles}
                 </>
@@ -61,9 +55,9 @@ const Category = () => {
     return(
         <>
             <div className="Category">
-                {selection()}
+                <Navigation />
                 
-                <div style={{marginLeft:250 + 'px'}}>
+                <div style={{marginLeft:250 + 'px'}} className='container'>
                     <p>{selected}</p>
                     <CategoryCall category={selected}/>
                     <Footer />
@@ -74,5 +68,4 @@ const Category = () => {
         
     );
 }
-
 export default Category;
