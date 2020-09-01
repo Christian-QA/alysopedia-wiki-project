@@ -38,7 +38,6 @@ let wiki = [{
 const SideList = () =>  {
     let indexCat = [];
     let indexSub = [];
-    let listItems;
 
     for (let i = 0; i < data.length; i++) {
         indexCat[i] = data[i].category;
