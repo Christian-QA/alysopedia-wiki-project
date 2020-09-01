@@ -50,7 +50,7 @@ const SideList = () =>  {
             <>
                 <Collapsible trigger="Nations and Races" className="Category-main" >
                     <Collapsible trigger="Humans" className="Category-sub" >
-                        <NavLink className="w3-bar-item w3-button w3-padding" id='Cael%20Theocracy' to="/Category">Cael Theocracy</NavLink>
+                        <NavLink className="w3-bar-item w3-button w3-padding" id='Cael Theocracy' to="/Category">Cael Theocracy</NavLink>
                         <h6 id='Gyrico%20City-States'>Gyrico City-States</h6>
                         <h6>Hydratopolan Hegemony</h6>
                         <h6>Regoterran Monarchy</h6>

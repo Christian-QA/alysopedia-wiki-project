@@ -43,7 +43,7 @@ const Wiki = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         searchWiki();
-      }
+    }
 
     const searchWiki = () => {
         axios.get(reqUrl + wikiPageTitle, configGet)

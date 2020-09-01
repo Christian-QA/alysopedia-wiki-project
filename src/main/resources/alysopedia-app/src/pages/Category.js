@@ -1,26 +1,37 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import logo from '../images/logo.svg';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import CategoryCall from '../components/CategoryCall';
 
 
-let selected = "Efsedgbdrfthtyjhnfguj"
+let selected = 'Cael Theocracy';
+
+const selection = () => {
+    
+    return(
+        <Navigation category={selected}/>
+    );
+}
+
 
 const Category = () => {
     return(
         <>
             <div className="Category">
-                <Navigation category={selected}/>
+                {selection()}
                 
                 <div style={{marginLeft:250 + 'px'}}>
                     <p>{selected}</p>
-
+                    <CategoryCall category={selected}/>
                     <Footer />
                 </div>
-                <CategoryCall category={selected}/>
+                
             </div>
         </>
+        
     );
 }
+
 export default Category;
