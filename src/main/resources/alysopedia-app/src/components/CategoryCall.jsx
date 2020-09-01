@@ -9,52 +9,43 @@ const CategoryCall = (props) =>  {
         responseType: 'json'
     };
     
-    const CategoryFinder = (category) => {
-        var returnedTitles = [];
-        var titleArray = [];
-        axios.get(`http://localhost:8181/readWikiByCategory/${category}`, configGet).then(response => {
     
-            for (let i = 0; i < response.data.length; i++) {
-                titleArray[i] = response.data[i].title
-            }
-            console.log(Array.from(titleArray));
-            
-            returnedTitles = titleArray.map((titleArray) => 
-                <React.Fragment key={titleArray}>
-                    {/* <p style={{width:250 + 'px'}}>{titleArray[i]}</p> */}
-                    <p>fsergzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz</p>
-                </React.Fragment>
-            )
-            
-            console.log(returnedTitles[0]); // works
-            console.log(titleArray[0]);
-            
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
+    var returnedTitles = [];
+    var titleArray = [];
+        axios.get(`http://localhost:8181/readWikiByCategory/${props.category}`, configGet).then(response => {
     
-        console.log(returnedTitles[0]); //undefined
+        for (let i = 0; i < response.data.length; i++) {
+            titleArray[i] = response.data[i].title
+        }
+        console.log(Array.from(titleArray));
+        
+        returnedTitles = titleArray.map((titleArray) => 
+            <React.Fragment key={titleArray}>
+                {/* <p style={{width:250 + 'px'}}>{titleArray[i]}</p> */}
+                 <p>fsergzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz</p>
+             </React.Fragment>
+        )
+            
+        console.log(returnedTitles[0]); // works
         console.log(titleArray[0]);
-        return (
-            <div>
-                <p>huvhujkv</p>
-                <>
-                    {returnedTitles}
-                </>
-            </div>
-        );
-    }
+            
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
     
-    console.log(CategoryFinder(props.category))
-    return(
-        <>
-            <div>
-                <p>Cat Call</p>
-                {CategoryFinder(props.category)}
-            </div>
-        </>
+    console.log(returnedTitles[0]); //undefined
+    console.log(titleArray[0]);
+    return (
+        <div>
+            <p>huvhujkv</p>
+            <>
+                {returnedTitles}
+            </>
+        </div>
     );
+    
+
 }
 
 export default CategoryCall;
