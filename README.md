@@ -2,7 +2,7 @@
 
 Welcome to the Alysopedia Wiki Project!
 
-Taking onboard our QA Academy training - this is a post-academy self assigned and managed project. The aim is to expand and build on our knowlegde and learn new technologies. The project is split into phases and is currently in the first phase of development.
+Taking onboard our QA Academy training - this is a post-academy, self-assigned and managed project. The aim is to expand and build on our knowledge and learn new technologies. The project is split into phases and is currently in the first phase of development.
 
 This first phase is intended to be an admin managed game wiki app to provide and manage a database of additional information and lore for the future game **Alysia Is Mine**.
 
@@ -206,7 +206,7 @@ This project is intended to be a learning experience as well as an admin managed
 
 ## Release Process
 
-This project is in development and not yet at 'release' stage - once the first phase is complete a v.1.0.0 will be released (planned for August 2020). Each phase will be a new release.
+This project is in development and not yet at 'release' stage - once the first phase is complete a v.1.0.0 will be released (planned for September 2020). Each phase will be a new release.
 
 There are currently no time contraints set on this project.
 
